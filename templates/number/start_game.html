@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}New game{% endblock %}
+
+{% block content %}
+<!--    <div class="container bgcont">-->
+<!--        <div class="row background-row">-->
+<!--                <h1>Hello, user</h1>-->
+<!--                <h3>Do u want to start game?</h3>-->
+<!--                <button type="submit" class="btn btn-success">Start</button>-->
+<!--        </div>-->
+<!--    </div>-->
+
+    <div class="container-fluid h-100 mt-5">
+        <div class="row align-items-center h-100">
+            <div class="col-sm-12">
+                <div class="row justify-content-center">
+                    <div class="col-4">
+
+                        <h1>Hello, user</h1>
+                        <h3>Do u want to start game?</h3>
+                        <form action="{% url 'start_game' %}" method="POST">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-success">Start</button>
+                        </form>
+
+                    </div>
+<!--                    <div class="col-4 text-center">-->
+
+<!--                        <h1>Hello, user</h1>-->
+<!--                        <h3>Do u want to start game?</h3>-->
+<!--                        <button type="submit" class="btn btn-success">Start</button>-->
+
+<!--                    </div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

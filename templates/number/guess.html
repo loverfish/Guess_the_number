@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}guess{% endblock %}
+
+{% block content %}
+    <div class="container-fluid h-100 mt-5">
+        <div class="row align-items-center h-100">
+            <div class="col-sm-12">
+                <div class="row justify-content-center">
+                    <div class="col-6">
+
+                        {% if context.response %}
+                            <h2>Верных цифр: {{ context.correct_digit }}</h2>
+                            <h2>Цифр на своем месте: {{ context.right_place }}</h2>
+                        {% endif %}
+
+                        <h2>Введите число из {{context.len}} цифр</h2>
+                        <form action="{% url 'guess' %}" method="post">
+                            {% csrf_token %}
+                            {{ context.form.as_p }}
+                            <button type="submit" class="btn btn-primary">Проверить</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
