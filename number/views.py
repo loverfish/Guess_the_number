@@ -1,15 +1,16 @@
 from django.shortcuts import render, redirect
 
-from .forms import InputForm
+from .forms import InputForm, NumberForm
 from .models import Number
 from .utils import create_number, compare_number
 
 
 def start_game(request):
+    form = NumberForm
     if request.method == 'POST':
         Number.objects.create(numb=create_number())
         return redirect('guess')
-    return render(request, 'number/start_game.html')
+    return render(request, 'number/start_game.html', {'form': form})
 
 
 def guess(request):
@@ -28,3 +29,7 @@ def guess(request):
         context['right_place'] = right_place
         context['correct_digit'] = correct_digit
     return render(request, 'number/guess.html', {'context': context})
+
+
+def about(request):
+    return render(request, 'number/about.html')

@@ -3,5 +3,16 @@
 {% block title %}Finish{% endblock %}
 
 {% block content %}
-    <h1>Congratulation!</h1>
+    <div class="container mt-3">
+
+        <h1>Congratulation!</h1>
+        <form action="{% url 'start_game' %}" method="POST">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-success mt-3 mx-3">Start again</button>
+            <a href="{% url 'start_game' %}">
+                <input type="button" class="btn btn-danger mt-3" value="Enough">
+            </a>
+        </form>
+
+    </div>
 {% endblock %}
