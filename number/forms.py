@@ -4,6 +4,7 @@ from .models import Number
 
 
 class NumberForm(forms.ModelForm):
+    # digits_quantity = form.IntegerField(min_value=30)
     class Meta:
         model = Number
         fields = ['digits_quantity']

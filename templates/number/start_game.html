@@ -8,10 +8,10 @@
         <div class="row align-items-center h-100">
             <div class="col-sm-12">
                 <div class="row justify-content-center">
-                    <div class="col-4">
+                    <div class="col-6">
 
-                        <h1>Hello, user</h1>
-                        <h3>Do u want to start game?</h3>
+<!--                        <h1>Hello, user</h1>-->
+                        <h2 class="my-3">Time to start the game!</h2>
                         <form action="{% url 'start_game' %}" method="POST">
                             {% csrf_token %}
                             {{ form.as_p }}
