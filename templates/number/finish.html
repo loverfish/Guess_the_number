@@ -3,29 +3,11 @@
 {% block title %}Finish{% endblock %}
 
 {% block content %}
-<!--    <div class="container mt-3">-->
 
-<!--        <h1>Congratulation!</h1>-->
+        <h2 class="my-3">Congratulation!</h2>
 
-<!--        <a href="{% url 'start_game' %}">-->
-<!--            <input type="button" class="btn btn-success mt-3" value="New game">-->
-<!--        </a>-->
-<!--    </div>-->
+        <a href="{% url 'start_game' %}">
+            <input type="button" class="btn btn-success mt-3" value="New game">
+        </a>
 
-    <div class="container-fluid h-100 mt-5">
-        <div class="row align-items-center h-100">
-            <div class="col-sm-12">
-                <div class="row justify-content-center">
-                    <div class="col-6">
-
-                        <h1>Congratulation!</h1>
-                        <a href="{% url 'start_game' %}">
-                            <input type="button" class="btn btn-success mt-3" value="New game">
-                        </a>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 {% endblock %}

@@ -18,7 +18,11 @@ def start_game(request):
 
 
 def guess(request):
-    start_number = str(Number.objects.last().numb)
+    start_number = '11111'
+    try:
+        start_number = str(Number.objects.last().numb)
+    except:
+        pass
     context = {
         'form': InputForm,
         'len': len(start_number),
